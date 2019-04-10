@@ -36,6 +36,7 @@ class PasswordGenerator():
         while self.__has_lowercase != True and self.__has_uppercase != True and self.__has_number != True and self.__has_symbol != True:
             for x in range(self.__length):
                 choice = int(self.__rn.random() * 2 + 1)
+                ##todo: fix this soon
                 if choice == 1:
                     self.__random_char = self.__rn.choice(self.__hexGUID)
                 else:
@@ -54,6 +55,7 @@ class PasswordGenerator():
     ##validate password
     def passCheck(self):
         # Check the flags to validate the charecter
+        ##todo: fix this as well
         for char in self.__password:
             if ascii(char) in range(97, 123):
                 self.__has_lowercase = True
@@ -64,12 +66,12 @@ class PasswordGenerator():
             else:
                 self.__has_symbol = True
             # If password is not
-        if self.__password in self.__storePassword:
-            self.__has_lowercase = False
-            self.__has_uppercase = False
-            self.__has_number = False
-            self.__has_symbol = False
-            self.__password = ""
+        # if self.__password in self.__storePassword:
+        #     self.__has_lowercase = False
+        #     self.__has_uppercase = False
+        #     self.__has_number = False
+        #     self.__has_symbol = False
+        #     self.__password = ""
 
     def display_pass(self):
         # print password and store the password in a tupple when done

@@ -9,13 +9,13 @@ import uuid
 
 
 # get Unique identifier without dashes
-class PasswordGenerator:
+class PasswordGenerator():
 
-    def __init__(self):
+    def __init__(self, leng):
         self.__hexGUID = uuid.uuid4().hex
         # User enters password length
         ##todo: set up as entry box in gui
-        self.__length = int(input("How many characters would you like? "))
+        self.__length = leng
         # Password to be stored here
         self.__password = ""
         self.__storePassword = ()
@@ -36,18 +36,19 @@ class PasswordGenerator:
         while self.__has_lowercase != True and self.__has_uppercase != True and self.__has_number != True and self.__has_symbol != True:
             for x in range(self.__length):
                 choice = int(self.__rn.random() * 2 + 1)
-            if choice == 1:
-                random_char = self.__rn.choice(self.__hexGUID)
-            else:
-                choice = int(self.__rn.random() * 3 + 1)
-        if choice == 1:
-            random_char = chr(self.__rn.randrange(58, 97))
-        elif choice == 2:
-            random_char = chr(self.__rn.randrange(33, 48))
-        else:
-            random_char = chr(self.__rn.randrange(123, 127))
-        self.__password += random_char
-        self.passCheck()
+                if choice == 1:
+                    self.__random_char = self.__rn.choice(self.__hexGUID)
+                else:
+                    choice = int(self.__rn.random() * 3 + 1)
+                if choice == 1:
+                    self.__random_char = chr(self.__rn.randrange(58, 97))
+                elif choice == 2:
+                    self.__random_char = chr(self.__rn.randrange(33, 48))
+                else:
+                    self.__random_char = chr(self.__rn.randrange(123, 127))
+                self.__password += self.__random_char
+            self.passCheck()
+        return self.__password
 
 
     ##validate password
@@ -75,3 +76,11 @@ class PasswordGenerator:
         print(self.__password)
         self.__storePassword.append(self.__password)
         print("Entropy:", round(math.log(94, 2), 3) * self.__length, "bits")
+
+
+# def main():
+#     p = PasswordGenerator()
+#     word = p.genPassword()
+#     print(word)
+#
+# main()

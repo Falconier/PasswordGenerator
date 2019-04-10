@@ -13,4 +13,9 @@ class PasswordGeneratorUI:
 
         ttk.Label(self, text="Password: ").grid(column=0, row=2, sticky=tk.E)
 
-        ttk.Button(self, text="Calculate", command=self.calculateMPG).grid(column=1, row=3)
+        ttk.Button(self, text="Calculate", command=self.makePassword).grid(column=1, row=3)
+
+    def makePassword(self):
+        # password =
+        # return
+        pass

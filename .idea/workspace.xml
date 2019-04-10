@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1faca04d-e734-4aeb-bcc7-d2f5e9c2b5c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/PasswordGenerator.py" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordGenerator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PasswordGeneratorGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/PasswordGeneratorGUI.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,8 +58,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PasswordGenerator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+            <state relative-caret-position="610">
+              <caret line="73" column="53" selection-start-line="73" selection-start-column="53" selection-end-line="73" selection-end-column="53" />
               <folding>
                 <element signature="e#43#56#0" expanded="true" />
               </folding>
@@ -90,10 +89,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="92" />
-    <option name="width" value="878" />
-    <option name="height" value="548" />
+    <option name="width" value="927" />
+    <option name="height" value="1088" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -225,7 +224,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="73" y="-7" width="1470" height="878" extended-state="6" />
+    <frame x="74" y="0" width="741" height="870" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.14285715" />
@@ -317,8 +316,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PasswordGenerator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="32" column="8" selection-start-line="32" selection-start-column="8" selection-end-line="32" selection-end-column="8" />
+        <state relative-caret-position="610">
+          <caret line="73" column="53" selection-start-line="73" selection-start-column="53" selection-end-line="73" selection-end-column="53" />
           <folding>
             <element signature="e#43#56#0" expanded="true" />
           </folding>

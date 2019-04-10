@@ -6,18 +6,16 @@ import uuid
 
 
 ##endregion
-# get Unique identifier wthout dashes
+# get Unique identifier without dashes
 class PasswordGenerator:
     def __init__(self):
-
-
         self.__hexGUID = uuid.uuid4().hex
         # User enters password length
         ##todo: set up as entry box in gui
-        length = int(input("How many characters would you like? "))
+        self.__length = int(input("How many characters would you like? "))
         # Password to be stored here
         self.__password = ""
-        self.__storePassword = []
+        self.__storePassword = ()
         # Flags to check if password is correct or not
         ##region Flags
         self.__has_lowercase = False
@@ -28,45 +26,49 @@ class PasswordGenerator:
         # create instance of SystemRandom class
         self.__rn = random.SystemRandom()
         self.__random_char = ""
-        # Srtarts sorry for varification check
 
-        
-    while has_lowercase != True and has_uppercase != True and has_number != True and has_symbol != True:
-        for x in range(length):
-            choice = int(rn.random() * 2 + 1)
+
+    # Srtarts sorry for varification check
+    ##genPassword Method
+    def genPassword(self):
+        while self.__has_lowercase != True and self.__has_uppercase != True and self.__has_number != True and self.__has_symbol != True:
+            for x in range(self.__length):
+                choice = int(self.__rn.random() * 2 + 1)
             if choice == 1:
-                random_char = rn.choice(hexGUID)
+                random_char = self.__rn.choice(self.__hexGUID)
             else:
-                choice = int(rn.random() * 3 + 1)
+                choice = int(self.__rn.random() * 3 + 1)
         if choice == 1:
-            random_char = chr(rn.randrange(58, 97))
+            random_char = chr(self.__rn.randrange(58, 97))
         elif choice == 2:
-            random_char = chr(rn.randrange(33, 48))
+            random_char = chr(self.__rn.randrange(33, 48))
         else:
-            random_char = chr(rn.randrange(123, 127))
-        password += random_char
+            random_char = chr(self.__rn.randrange(123, 127))
+        self.__password += random_char
+        self.passCheck()
 
-        # Check the flags to validate the charecter
-        for char in password:
-            if ascii(char) in range(97, 123):
-                has_lowercase = True
-            elif ascii(char) in range(65, 91):
-                has_uppercase = True
-            elif ascii(char) in range(48, 58):
-                has_number = True
-            else:
-                has_symbol = True
 
-        if password in storePassword:
+##validate password
+def passCheck(self):
+    # Check the flags to validate the charecter
+    for char in self.__password:
+        if ascii(char) in range(97, 123):
+            self.__has_lowercase = True
+        elif ascii(char) in range(65, 91):
+            self.__has_uppercase = True
+        elif ascii(char) in range(48, 58):
+            self.__has_number = True
+        else:
+            self.__has_symbol = True
+        # If password is not
+    if self.__password in self.__storePassword:
+        self.__has_lowercase = False
+        self.__has_uppercase = False
+        self.__has_number = False
+        self.__has_symbol = False
+        self.__password = ""
 
     # print password and store the password in a tupple when done
-    print(password)
-    if password == storePassword.length:
-        password
-    storePassword.appened(password)
-    print("Entropy:", round(math.log(94, 2), 3) * length, "bits")
-
-
-    def crossCheck(pword):
-        for i in range(len(storePassword)):
-            if (pword == storePassword[i]):
+    print(self.__password)
+    self.__storePassword.appened(self.__password)
+print("Entropy:", round(math.log(94, 2), 3) * self.__length, "bits")

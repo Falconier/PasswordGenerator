@@ -1,13 +1,24 @@
+# Importing EVERYTHING!!!
+##region Imports
 import random
 import math
 import uuid
+
+##endregion
+# get Unique identifier wthout dashes
 hexGUID = uuid.uuid4().hex
+# User enters password length
 length = int(input("How many characters would you like? "))
+# Password to be stored here
 password = ""
+# Flags to check if password is correct or not
+##region Flags
 has_lowercase = False
 has_uppercase = False
 has_number = False
 has_symbol = False
+##endregion
+# create instance of SystemRandom class
 rn = random.SystemRandom()
 random_char = ""
 while has_lowercase != True and has_uppercase != True and has_number != True and has_symbol != True:
@@ -34,4 +45,4 @@ while has_lowercase != True and has_uppercase != True and has_number != True and
         else:
             has_symbol = True
 print(password)
-print("Entropy:", round(math.log(94, 2), 3) * length,"bits")
+print("Entropy:", round(math.log(94, 2), 3) * length, "bits")

@@ -6,8 +6,11 @@ import uuid
 
 
 ##endregion
+
+
 # get Unique identifier without dashes
 class PasswordGenerator:
+
     def __init__(self):
         self.__hexGUID = uuid.uuid4().hex
         # User enters password length
@@ -26,7 +29,6 @@ class PasswordGenerator:
         # create instance of SystemRandom class
         self.__rn = random.SystemRandom()
         self.__random_char = ""
-
 
     # Srtarts sorry for varification check
     ##genPassword Method
@@ -48,27 +50,28 @@ class PasswordGenerator:
         self.passCheck()
 
 
-##validate password
-def passCheck(self):
-    # Check the flags to validate the charecter
-    for char in self.__password:
-        if ascii(char) in range(97, 123):
-            self.__has_lowercase = True
-        elif ascii(char) in range(65, 91):
-            self.__has_uppercase = True
-        elif ascii(char) in range(48, 58):
-            self.__has_number = True
-        else:
-            self.__has_symbol = True
-        # If password is not
-    if self.__password in self.__storePassword:
-        self.__has_lowercase = False
-        self.__has_uppercase = False
-        self.__has_number = False
-        self.__has_symbol = False
-        self.__password = ""
+    ##validate password
+    def passCheck(self):
+        # Check the flags to validate the charecter
+        for char in self.__password:
+            if ascii(char) in range(97, 123):
+                self.__has_lowercase = True
+            elif ascii(char) in range(65, 91):
+                self.__has_uppercase = True
+            elif ascii(char) in range(48, 58):
+                self.__has_number = True
+            else:
+                self.__has_symbol = True
+            # If password is not
+        if self.__password in self.__storePassword:
+            self.__has_lowercase = False
+            self.__has_uppercase = False
+            self.__has_number = False
+            self.__has_symbol = False
+            self.__password = ""
 
-    # print password and store the password in a tupple when done
-    print(self.__password)
-    self.__storePassword.appened(self.__password)
-print("Entropy:", round(math.log(94, 2), 3) * self.__length, "bits")
+    def display_pass(self):
+        # print password and store the password in a tupple when done
+        print(self.__password)
+        self.__storePassword.append(self.__password)
+        print("Entropy:", round(math.log(94, 2), 3) * self.__length, "bits")
